@@ -14,7 +14,7 @@ export enum PlanName {
   pro = "pro",
 }
 
-export interface addon {
+export interface Addon {
   title: string;
   description: string;
   price: number;

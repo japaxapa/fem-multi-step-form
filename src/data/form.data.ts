@@ -1,4 +1,4 @@
-import { FormInfo, PlanDuration, PlanName } from "../context/form.types";
+import { FormInfo, PlanDuration } from "../context/form.types";
 
 export const titles = [
   "Personal info",
@@ -58,7 +58,7 @@ export const addons = {
       price: 2,
     },
     {
-      title: "Customizable profile",
+      title: "Customizable Profile",
       description: "Custom theme on your profile",
       price: 2,
     },
@@ -75,7 +75,7 @@ export const addons = {
       price: 20,
     },
     {
-      title: "Customizable profile",
+      title: "Customizable Profile",
       description: "Custom theme on your profile",
       price: 20,
     },

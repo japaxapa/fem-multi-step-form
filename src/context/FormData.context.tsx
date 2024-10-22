@@ -55,9 +55,10 @@ export const FormDataProvider = ({
   const validateInfo = (step: number) => {
     setError([]);
 
-    const newError = [];
+    const newError: string[] = [];
 
-    switch (step) {
+    switch (
+      step
       // case 1: {
       //   if (!data.name) {
       //     newError.push("name");
@@ -72,11 +73,12 @@ export const FormDataProvider = ({
       //   }
       //   break;
       // }
-      case 2: {
-        if (!data.plan) {
-          newError.push("plan");
-        }
-      }
+      // case 2: {
+      //   if (!data.plan) {
+      //     newError.push("plan");
+      //   }
+      // }
+    ) {
     }
 
     setError(newError);

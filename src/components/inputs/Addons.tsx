@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { addons } from "../../data/form.data";
 import "./Addons.styles.css";
-import { PlanDuration } from "../../context/form.types";
+import { Addon, PlanDuration } from "../../context/form.types";
 import { useFormDataContext } from "../../context/FormData.context";
 
 const getFormattedPrice = (price: number, plan: PlanDuration) => {
@@ -10,28 +9,22 @@ const getFormattedPrice = (price: number, plan: PlanDuration) => {
 };
 
 export default function Addons() {
-  const { data } = useFormDataContext();
+  const { data, changeData } = useFormDataContext();
 
-  const [checkedState, setCheckedState] = useState(
-    new Array(addons[data.planDuration].length).fill(false)
-  );
+  const isInDataAddons = (addon: Addon) => {
+    return data.addons.some((dataAddons) => dataAddons.title === addon.title);
+  };
 
-  const handleOnChange = (position: number) => {
-    const checkedDiv = document.getElementById(
-      `addons__list--item-${position}`
-    );
-
-    const updatedCheckedState = checkedState.map((item, index) => {
-      if (index === position) {
-        if (item) checkedDiv?.classList.remove("active--item");
-        else checkedDiv?.classList.add("active--item");
-        return !item;
-      } else {
-        return item;
-      }
-    });
-
-    setCheckedState(updatedCheckedState);
+  const handleChange = (addon: Addon) => {
+    let newAddons: Addon[] = [...data.addons];
+    if (isInDataAddons(addon)) {
+      newAddons = data.addons.filter(
+        (dataAddon) => dataAddon.title !== addon.title
+      );
+    } else {
+      newAddons.push(addon);
+    }
+    changeData("addons", newAddons);
   };
 
   return (
@@ -39,12 +32,15 @@ export default function Addons() {
       <ul className="addons__list">
         {addons[data.planDuration].map(
           ({ title, description, price }, index) => {
+            const isSelected = isInDataAddons({ title, description, price });
             return (
               <li key={index}>
                 <div
                   id={`addons__list--item-${index}`}
-                  className="addons__list--item"
-                  onClick={() => handleOnChange(index)}
+                  className={`addons__list--item ${
+                    isSelected ? "active--item" : ""
+                  }`}
+                  onClick={() => handleChange({ title, description, price })}
                 >
                   <div className="left__section">
                     <div>
@@ -54,7 +50,7 @@ export default function Addons() {
                         id={`custom-checkbox-${index}`}
                         name={title}
                         value={title}
-                        checked={checkedState[index]}
+                        checked={isSelected}
                         onChange={() => {
                           console.log("clicked");
                         }}
