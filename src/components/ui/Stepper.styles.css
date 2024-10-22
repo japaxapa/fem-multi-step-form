@@ -1,0 +1,14 @@
+.stepper__container {
+  background-image: url("/assets/images/bg-sidebar-mobile.svg");
+  background-size: cover; /* Adjust to fit the element */
+  background-position: center; /* Center the background */
+  background-repeat: no-repeat; /* Prevent tiling */
+
+  display: flex;
+  min-height: 25vh;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 8vh;
+  box-sizing: border-box;
+}

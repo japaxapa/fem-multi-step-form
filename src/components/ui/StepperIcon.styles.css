@@ -1,0 +1,19 @@
+.rounded__container {
+  align-items: center;
+  background-color: transparent;
+  border-radius: 4rem;
+  border: 2px solid var(--color-p-blue-light);
+  color: var(--color-p-blue-light);
+  display: flex;
+  font-weight: bold;
+  height: 2rem;
+  justify-content: center;
+  margin: 0 0.5rem;
+  width: 2rem;
+}
+
+.active {
+  background-color: var(--color-p-blue-pastel);
+  border: 2px solid var(--color-p-blue-pastel);
+  color: var(--color-p-blue-purplish);
+}

@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/fonts/Ubuntu-Regular.ttf") format("truetype"); /* Regular font */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/fonts/Ubuntu-Bold.ttf") format("truetype"); /* Bold font */
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/fonts/Ubuntu-Medium.ttf") format("truetype"); /* Medium font */
+  font-weight: medium;
+  font-style: normal;
+}
+
+:root {
+  --color-p-blue-marine: hsl(213, 96%, 18%);
+  --color-p-blue-purplish: hsl(243, 100%, 62%);
+  --color-p-blue-pastel: hsl(228, 100%, 84%);
+  --color-p-blue-light: hsl(206, 94%, 87%);
+  --color-p-red-strawberry: hsl(354, 84%, 57%);
+
+  --color-n-gray-cool: hsl(231, 11%, 63%);
+  --color-n-gray-light: hsl(229, 24%, 87%);
+  --color-n-magnolia: hsl(217, 100%, 97%);
+  --color-n-alabaster: hsl(231, 100%, 99%);
+  --color-n-white: hsl(0, 0%, 100%);
+
+  --base-font-size: 16px;
+}
