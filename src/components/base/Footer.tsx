@@ -33,7 +33,7 @@ export default function Footer() {
         className="btn__next"
         onClick={handleClick(StepChangeType.increase)}
       >
-        Next step
+        {step === 4 ? "Confirm" : "Next Step"}
       </button>
     </div>
   );

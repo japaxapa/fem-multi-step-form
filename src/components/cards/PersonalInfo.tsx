@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, useCallback, useEffect } from "react";
+import { BaseSyntheticEvent, useCallback } from "react";
 import "./PersonalInfo.styles.css";
 import { useFormDataContext } from "../../context/FormData.context";
 
@@ -28,11 +28,6 @@ export default function PersonalInfoComponent() {
     },
     [changeData]
   );
-
-  useEffect(() => {
-    console.log(error);
-    console.log(error.includes("name"), "here");
-  }, [error]);
 
   return (
     <>

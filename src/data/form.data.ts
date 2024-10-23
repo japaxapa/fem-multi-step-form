@@ -5,6 +5,7 @@ export const titles = [
   "Select your plan",
   "Pick add-ons",
   "Finishing up",
+  "Thank you!",
 ];
 
 export const descriptions = [
@@ -12,6 +13,7 @@ export const descriptions = [
   "You have the oprion of monthly or yearly billing.",
   "Add-ons help enhance your gaming experience.",
   "Double-check everything looks OK before confirming.",
+  "Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com",
 ];
 
 export const options = {

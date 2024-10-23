@@ -7,6 +7,7 @@ interface FormContextProps {
   title: string;
   description: string;
   changeStep: (action: StepChangeType) => void;
+  changePlan: () => void;
 }
 
 const FormContext = createContext<FormContextProps | undefined>(undefined);
@@ -33,7 +34,7 @@ export const FormProvider = ({ children }: { children: React.ReactNode }) => {
 
       switch (action) {
         case StepChangeType.increase: {
-          if (step === 4) {
+          if (step === 5) {
             console.log("confirmed");
           } else {
             setStep((prev) => prev + 1);
@@ -58,6 +59,10 @@ export const FormProvider = ({ children }: { children: React.ReactNode }) => {
     [step]
   );
 
+  const changePlan = () => {
+    setStep(2);
+  };
+
   return (
     <FormContext.Provider
       value={{
@@ -65,6 +70,7 @@ export const FormProvider = ({ children }: { children: React.ReactNode }) => {
         title,
         description,
         changeStep,
+        changePlan,
       }}
     >
       {children}

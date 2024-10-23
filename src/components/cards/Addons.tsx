@@ -1,6 +1,6 @@
 import { addons } from "../../data/form.data";
 import "./Addons.styles.css";
-import { Addon, PlanDuration } from "../../context/form.types";
+import { PlanDuration } from "../../context/form.types";
 import { useFormDataContext } from "../../context/FormData.context";
 
 const getFormattedPrice = (price: number, plan: PlanDuration) => {
@@ -11,18 +11,16 @@ const getFormattedPrice = (price: number, plan: PlanDuration) => {
 export default function Addons() {
   const { data, changeData } = useFormDataContext();
 
-  const isInDataAddons = (addon: Addon) => {
-    return data.addons.some((dataAddons) => dataAddons.title === addon.title);
+  const isInDataAddons = (title: string) => {
+    return data.addons.some((t) => t === title);
   };
 
-  const handleChange = (addon: Addon) => {
-    let newAddons: Addon[] = [...data.addons];
-    if (isInDataAddons(addon)) {
-      newAddons = data.addons.filter(
-        (dataAddon) => dataAddon.title !== addon.title
-      );
+  const handleChange = (title: string) => {
+    let newAddons: string[] = [...data.addons];
+    if (isInDataAddons(title)) {
+      newAddons = data.addons.filter((addonTitle) => addonTitle !== title);
     } else {
-      newAddons.push(addon);
+      newAddons.push(title);
     }
     changeData("addons", newAddons);
   };
@@ -32,7 +30,7 @@ export default function Addons() {
       <ul className="addons__list">
         {addons[data.planDuration].map(
           ({ title, description, price }, index) => {
-            const isSelected = isInDataAddons({ title, description, price });
+            const isSelected = isInDataAddons(title);
             return (
               <li key={index}>
                 <div
@@ -40,7 +38,7 @@ export default function Addons() {
                   className={`addons__list--item ${
                     isSelected ? "active--item" : ""
                   }`}
-                  onClick={() => handleChange({ title, description, price })}
+                  onClick={() => handleChange(title)}
                 >
                   <div className="left__section">
                     <div>

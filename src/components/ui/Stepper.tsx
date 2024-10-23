@@ -10,7 +10,7 @@ export default function Stepper() {
   return (
     <div className="stepper__container">
       {steps.map((s) => (
-        <StepperIcon key={s} step={s} isActive={step === s} />
+        <StepperIcon key={s} step={s} isActive={step > 4 || step === s} />
       ))}
     </div>
   );

@@ -26,5 +26,5 @@ export interface FormInfo {
   phone: string;
   plan: string;
   planDuration: PlanDuration;
-  addons: addon[];
+  addons: string[];
 }
