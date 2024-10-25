@@ -12,3 +12,50 @@
   padding-bottom: 8vh;
   box-sizing: border-box;
 }
+
+.stepper--item__text {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .stepper__container {
+    height: 100%;
+    background-image: url("/assets/images/bg-sidebar-desktop.svg");
+    background-size: cover; /* Adjust to fit the element */
+    width: 25rem;
+    border-radius: 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 3rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .stepper--item__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .stepper--item__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stepper--item__text h1,
+  h2 {
+    font-size: 1rem;
+    text-align: start;
+    margin: 0;
+    margin-left: 1rem;
+  }
+
+  .stepper--item__text h1 {
+    font-weight: normal;
+    color: var(--color-p-blue-pastel);
+  }
+
+  .stepper--item__text h2 {
+    color: var(--color-n-white);
+  }
+}

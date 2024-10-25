@@ -1,5 +1,7 @@
 import { FormInfo, PlanDuration } from "../context/form.types";
 
+export const stepsTitles = ["YOUR INFO", "SELECT PLAN", "ADD-ONS", "SUMMARY"];
+
 export const titles = [
   "Personal info",
   "Select your plan",

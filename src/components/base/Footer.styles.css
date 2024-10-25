@@ -32,3 +32,14 @@
 .btn__next:hover {
   cursor: pointer;
 }
+
+@media (min-width: 1280px) {
+  .footer__container {
+    position: relative;
+    padding: 1rem 6rem;
+  }
+
+  .btn__next {
+    right: 6rem;
+  }
+}

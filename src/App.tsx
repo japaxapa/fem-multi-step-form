@@ -10,13 +10,15 @@ function App() {
     <>
       <div className="container">
         <Stepper />
-        <Card />
-        {step !== 5 && (
-          <>
-            <div className="spacer"></div>
-            <Footer />
-          </>
-        )}
+        <div className="info">
+          <Card />
+          {step !== 5 && (
+            <>
+              <div className="spacer"></div>
+              <Footer />
+            </>
+          )}
+        </div>
       </div>
     </>
   );

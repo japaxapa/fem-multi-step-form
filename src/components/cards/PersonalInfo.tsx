@@ -41,7 +41,7 @@ export default function PersonalInfoComponent() {
         />
       </InputContainer>
       <InputContainer error={error.includes("email")}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email Address</label>
         <input
           type="text"
           placeholder="e.g. stephenking@lorem.com"
@@ -49,7 +49,7 @@ export default function PersonalInfoComponent() {
         />
       </InputContainer>
       <InputContainer error={error.includes("phone")}>
-        <label htmlFor="phone">Phone</label>
+        <label htmlFor="phone">Phone Number</label>
         <input
           type="text"
           placeholder="e.g. + 1 234 567 890"

@@ -84,3 +84,17 @@
 .active__switch {
   color: var(--color-p-blue-marine);
 }
+
+@media (min-width: 1280px) {
+  .switch__container {
+    justify-content: center;
+  }
+
+  #leftLabel {
+    padding: 0 2rem;
+  }
+
+  #rightLabel {
+    padding: 0 2rem;
+  }
+}

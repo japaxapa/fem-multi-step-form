@@ -53,3 +53,24 @@ h3 {
   padding: 0.5rem 0 0 1rem;
   color: red;
 }
+
+@media (min-width: 1280px) {
+  .plan__choices {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .option__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .option__icon {
+    margin-bottom: 2rem;
+  }
+
+  .option__container h2 {
+    margin: 0;
+  }
+}

@@ -33,3 +33,13 @@
 .input__container input::placeholder {
   font-weight: 700;
 }
+
+@media (min-width: 1280px) {
+  .input__container label {
+    padding-top: 1rem;
+  }
+
+  .input__container input {
+    padding: 1rem;
+  }
+}

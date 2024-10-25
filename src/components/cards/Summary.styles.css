@@ -69,3 +69,9 @@ p {
   font-weight: 700;
   color: var(--color-p-blue-purplish);
 }
+
+@media (min-width: 1280px) {
+  .summary__separator {
+    margin: 2rem 0;
+  }
+}
